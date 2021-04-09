@@ -31,7 +31,7 @@ class DetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val product = arguments?.getSerializable("product") as Product
+        val product = arguments?.getSerializable(Product::class.simpleName) as Product
         tvCondition = view.findViewById(R.id.tv_details_condition)
         ivPhoto = view.findViewById(R.id.iv_details_photo)
         tvPrice = view.findViewById(R.id.tv_details_price)
@@ -58,7 +58,7 @@ class DetailsFragment : Fragment() {
 
     companion object{
         fun getInstance(product: Product) : DetailsFragment{
-            return DetailsFragment().apply { arguments = bundleOf("product" to product) }
+            return DetailsFragment().apply { arguments = bundleOf(Product::class.simpleName!! to product) }
         }
     }
 

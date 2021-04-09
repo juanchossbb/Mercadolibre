@@ -12,10 +12,6 @@ open class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
     }
 
-     fun addFragment(fragment : Fragment){
-        supportFragmentManager.beginTransaction().add(R.id.container,fragment).addToBackStack(null).commit()
-    }
-
     fun replaceFragment(fragment: Fragment, tag : String? = null){
         supportFragmentManager.beginTransaction().replace(R.id.container,fragment,tag).commit()
     }

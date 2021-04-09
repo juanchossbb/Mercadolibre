@@ -16,7 +16,7 @@ import com.juanhurtado.mercadolibre.R
 import com.juanhurtado.mercadolibre.details.DetailsActivity
 import com.juanhurtado.mercadolibre.model.Product
 import io.reactivex.disposables.CompositeDisposable
-
+private const val QUERY = "query"
 class SearchResultFragment : Fragment(), SearchResultListener{
 
     val viewmodel = SearchResultViewModel()
@@ -35,7 +35,7 @@ class SearchResultFragment : Fragment(), SearchResultListener{
         super.onViewCreated(view, savedInstanceState)
         recyclerView = view.findViewById(R.id.rv_search_result)
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
-        query = arguments?.getString("query").orEmpty()
+        query = arguments?.getString(QUERY).orEmpty()
         search(query)
     }
 
@@ -50,13 +50,13 @@ class SearchResultFragment : Fragment(), SearchResultListener{
 
     companion object{
         fun getNewInstance(query : String): SearchResultFragment {
-            return SearchResultFragment().apply { arguments = bundleOf("query" to query) }
+            return SearchResultFragment().apply { arguments = bundleOf(QUERY to query) }
         }
     }
 
     override fun onProductClicked(product: Product?) {
         val intent = Intent(requireContext(),DetailsActivity::class.java).apply {
-            putExtra("product", product)
+            putExtra(Product::class.simpleName, product)
         }
         startActivity(intent)
     }

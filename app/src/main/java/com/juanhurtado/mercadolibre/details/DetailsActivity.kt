@@ -16,7 +16,7 @@ class DetailsActivity : MainActivity(){
 
     override fun onStart() {
         super.onStart()
-        val product = intent.getSerializableExtra("product") as Product
+        val product = intent.getSerializableExtra(Product::class.simpleName) as Product
         replaceFragment(DetailsFragment.getInstance(product))
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
