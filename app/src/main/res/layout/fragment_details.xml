@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/tv_details_condition"
+        style="@style/MercadoLibreText.Price"
+        tools:text="Usado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_details_title"
+        style="@style/MercadoLibreText.Title"
+        tools:text="Lavadora Whirlpool"
+        app:layout_constraintTop_toBottomOf="@id/tv_details_condition"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageView
+        android:id="@+id/iv_details_photo"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_details_title"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_details_price"
+        style="@style/MercadoLibreText.Price"
+        tools:text="$680.000"
+        app:layout_constraintTop_toBottomOf="@id/iv_details_photo"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_details_seller"
+        style="@style/MercadoLibreText.Condition"
+        tools:text="Vendido por RACHALAUREANO"
+        app:layout_constraintTop_toBottomOf="@id/tv_details_price"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_details_sold"
+        style="@style/MercadoLibreText.Condition"
+        tools:text="2638 vendidos"
+        app:layout_constraintTop_toBottomOf="@id/tv_details_seller"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_details_available"
+        style="@style/MercadoLibreText.Condition"
+        tools:text="25 Disponibles"
+        app:layout_constraintTop_toBottomOf="@id/tv_details_sold"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <View
+        android:id="@+id/v_details_divider1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        app:layout_constraintTop_toBottomOf="@id/tv_details_available"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_details_attributes_title"
+        style="@style/MercadoLibreText.Price"
+        android:text="Caracteristicas del producto"
+        app:layout_constraintTop_toBottomOf="@id/v_details_divider1"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_details_attributes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_details_attributes_title"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

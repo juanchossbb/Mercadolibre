@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Mercadolibre</string>
+    <string name="hint_search_bar">Buscar en Mercado Libre</string>
+    <string name="welcome">Bienvenido, por favor inicie su busqueda</string>
+    <string name="format_price">$ %s %s</string>
+    <string name="format_sold">%d Vendidos</string>
+    <string name="format_available">%d Disponibles</string>
+    <string name="format_seller">ID del vendedor %d</string>
+</resources>
